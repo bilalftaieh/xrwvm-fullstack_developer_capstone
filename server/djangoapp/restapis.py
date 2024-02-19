@@ -1,5 +1,5 @@
 # Uncomment the imports below before you add the function code
-# import requests
+import requests
 import os
 from dotenv import load_dotenv
 
@@ -40,6 +40,7 @@ def analyze_review_sentiments(text):
 
 def post_review(data_dict):
     request_url = backend_url+"/insert_review"
+    print('post_review invoked')
     try:
         response = requests.post(request_url,json=data_dict)
         print(response.json())
